@@ -10,8 +10,22 @@ class Despesa {
 }
 
 class Bd {
+
+    constructor() {
+        let id = localStorage.getItem('id')
+
+        if (id === null) {
+            localStorage.setItem('id', 0)
+        }
+    }
+
+    getProximoId() {
+        let proximoId = localStorage.getItem('id')
+    }
+
     gravar(d) {
-        localStorage.setItem('despesa', JSON.stringify(d))
+        //localStorage.setItem('despesa', JSON.stringify(d))
+        this.getProximoId()
     }
 }
 
